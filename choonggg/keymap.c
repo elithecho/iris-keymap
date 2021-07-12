@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   [_COLEMAK] = LAYOUT(
   // * MOD DH variant
   //┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┬───────┬──────┐
-     KC_EQL,1,     2,     3,      4,    5,                           6,    7,     8,     9,     0,     KC_MINUS,
+     KC_EQL,KC_1,  KC_2,  KC_3,  KC_4,  KC_5,                       KC_6,  KC_7,  KC_8,  KC_9,  KC_0,   KC_MINUS,
   //├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼───────┼──────┤
      KC_TAB,KC_Q,  KC_W,  KC_F,  KC_P,  KC_B,                       KC_J,  KC_L,  KC_U,  KC_Y,  KC_SCLN,KC_BSLASH,
   //├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼───────┼──────┤
@@ -70,13 +70,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
   //┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┬───────┬──────┐
      KC_F12,KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                      KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
   //├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼───────┼──────┤
-     KC_NO,RGB_MOD,KC_PSCR,KC_LCBR,KC_RCBR,KC_PIPE,                 KC_UP, 7,     8,     9,     KC_HOME,KC_VOLU,
+     KC_NO,RGB_MOD,KC_PSCR,KC_LCBR,KC_RCBR,KC_PIPE,                 KC_UP, KC_7,  KC_8,  KC_9,  KC_HOME,KC_VOLU,
   //├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼───────┼──────┤
-     KC_NO,KC_PGUP,KC_PGDN,KC_LPRN,KC_RPRN, KC_GRAVE,               KC_DOWN,4,    5,     6,     KC_END,  KC_VOLD,
+     KC_NO,KC_PGUP,KC_PGDN,KC_LPRN,KC_RPRN, KC_GRAVE,               KC_DOWN,KC_4, KC_5,  KC_6,  KC_END, KC_VOLD,
   //├──────┼──────┼──────┼──────┼──────┼──────┼───────┐    ┌───────┼──────┼──────┼──────┼──────┼───────┼──────┤
-     KC_NO,KC_LCTL,OALT ,KC_LBRC,KC_RBRC,  KC_TILD,KC_NO,      KC_NO, KC_AMPR, 1,    2,     3,    KC_RALT, KC__MUTE,
-  //└──────┴──────┴──────┴───┬──┴──┬──┴───┬───┴───┬──┘    └───┬───┴──┬───┴───┬──┴───┬──┴──────┴───────┴──────┘
-                              KC_LCTL,KC_LALT,KC_NO,            KC_LEFT,KC_RGHT,0
+     KC_NO,KC_LCTL,OALT ,KC_LBRC,KC_RBRC,  KC_TILD,KC_NO,  KC_NO,   KC_AMPR,KC_1, KC_2,  KC_3,  KC_RALT, KC__MUTE,
+  //└──────┴──────┴──────┴───┬──┴──┬──┴───┬───┴───┬──┘    └───┬────┴──┬───┴───┬──┴───┬──┴──────┴───────┴──────┘
+                              KC_LCTL,KC_LALT,KC_NO,            KC_LEFT,KC_RGHT,KC_0
   //                         └─────┴──────┴───────┘            └──────┴───────┴──────┘
   ),
 

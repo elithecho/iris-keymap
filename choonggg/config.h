@@ -7,8 +7,8 @@
 
 /* Select hand configuration */
 
-#define MASTER_LEFT
-// #define MASTER_RIGHT
+// #define MASTER_LEFT
+#define MASTER_RIGHT
 // #define EE_HANDS
 
 #undef RGBLED_NUM
@@ -31,5 +31,5 @@
 // #define COMBO_COUNT 1
 //
 // Optimizations
-#define NO_ACTION_MACRO
-#define NO_ACTION_FUNCTION
+// #define NO_ACTION_MACRO
+// #define NO_ACTION_FUNCTION
