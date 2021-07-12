@@ -17,16 +17,21 @@ enum custom_keycodes {
 // MOD_ prefix for MT(MOD, kc)
 // KH_ prefix for Hold toggle
 // KD_ prefix for Tapdance
+// O prefix for One shot
 
-#define KC_HESC LT(_LOWER, KC_ESC)
+#define HESC LT(_LOWER, KC_ESC)
 #define MOD_Z MT(MOD_LCTL, KC_Z)
 #define MOD_X MT(MOD_LALT, KC_X)
 #define MOD_BSPC MT(MOD_LSFT, KC_BSPC)
 #define MOD_SPC MT(MOD_RSFT, KC_SPC)
-#define KC_DLSFT TD(TD_LSFT)
-#define KC_HBSPC LT(_LOWER, KC_BSPC)
-#define KC_SSPC MT(MOD_LSFT, KC_SPC)
-#define KC_TGUI MT(MOD_LGUI, KC_TAB)
+#define DLSFT TD(TD_LSFT)
+#define HBSPC LT(_LOWER, KC_BSPC)
+#define TGUI MT(MOD_LGUI, KC_TAB)
+//#define KC_SENT MT(MOD_LSFT, KC_ENT)
+#define SSPC MT(MOD_LSFT, KC_SPC)
+#define KC_RGB_MOD RGB_MOD
+
+#define OALT OSM(MOD_LALT)
 
 // Define tapdance
 enum {
@@ -46,33 +51,33 @@ enum {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
-  [_COLEMAK] = LAYOUT_kc(
+  [_COLEMAK] = LAYOUT(
   // * MOD DH variant
-  //┌─────┬─────┬─────┬─────┬─────┬─────┐                ┌─────┬─────┬─────┬─────┬─────┬─────┐
-     EQL,  1,    2,    3,    4,    5,                     6,    7,    8,    9,    0,    MINUS,
-  //├─────┼─────┼─────┼─────┼─────┼─────┤                ├─────┼─────┼─────┼─────┼─────┼─────┤
-     TAB,  Q,    W,    F,    P,    B,                     J,    L,    U,    Y,    SCLN, BSLASH,
-  //├─────┼─────┼─────┼─────┼─────┼─────┤                ├─────┼─────┼─────┼─────┼─────┼─────┤
-     HESC, A,    R,    S,    T,    G,                     K,    N,    E,    I,    O,    QUOT,
-  //├─────┼─────┼─────┼─────┼─────┼─────┼─────┐    ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-     DLSFT,Z,   X,     C,    D,    V,    LSFT,     DEL,  M,    H,    COMM, DOT,  SLSH, RSFT,
-  //└─────┴─────┴─────┴─┬───┴──┬──┴──┬──┴──┬──┘    └───┬─┴──┬──┴─┬───┴─┬───┴─────┴─────┴─────┘
-                         LCTL,  HBSPC,TGUI,             ENT, SSPC, LALT
-  //                    └──────┴─────┴─────┘           └────┴────┴─────┘
+  //┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┬───────┬──────┐
+     KC_EQL,1,     2,     3,      4,    5,                           6,    7,     8,     9,     0,     KC_MINUS,
+  //├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼───────┼──────┤
+     KC_TAB,KC_Q,  KC_W,  KC_F,  KC_P,  KC_B,                       KC_J,  KC_L,  KC_U,  KC_Y,  KC_SCLN,KC_BSLASH,
+  //├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼───────┼──────┤
+     HESC,  KC_A,  KC_R,  KC_S,  KC_T,  KC_G,                       KC_K,  KC_N,  KC_E,  KC_I,  KC_O,   KC_QUOT,
+  //├──────┼──────┼──────┼──────┼──────┼──────┼───────┐    ┌───────┼──────┼──────┼──────┼──────┼───────┼──────┤
+     DLSFT, KC_Z,  KC_X,  KC_C,  KC_D,  KC_V,  KC_LSFT,     KC_DEL, KC_M,  KC_H,  KC_COMM,KC_DOT,KC_SLSH,KC_RSFT,
+  //└──────┴──────┴──────┴───┬──┴──┬──┴───┬───┴───┬──┘     └───┬───┴──┬───┴───┬──┴───┬──┴──────┴───────┴──────┘
+                              KC_LCTL,HBSPC,TGUI,               KC_ENT,SSPC,  KC_LALT
+  //                         └─────┴──────┴───────┘            └──────┴───────┴──────┘
   ),
 
-  [_LOWER] = LAYOUT_kc(
-  //┌─────┬─────┬─────┬─────┬─────┬─────┐                    ┌─────┬─────┬─────┬─────┬─────┬─────┐
-     F12,  F1,   F2,   F3,   F4,   F5,                        F6,   F7,   F8,   F9,   F10,  F11,
-  //├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-     TRNS, EXLM, AT,   LCBR, RCBR, PIPE,                      UP,   7,    8,    9,    LBRC, _VOLUP,
-  //├─────┼─────┼─────┼─────┼─────┼─────┤                    ├─────┼─────┼─────┼─────┼─────┼─────┤
-     TRNS, HASH, DLR,  LPRN, RPRN, GRAVE,                     DOWN, 4,    5,    6,    TRNS, _VOLDOWN,
-  //├─────┼─────┼─────┼─────┼─────┼─────┼─────┐        ┌─────┼─────┼─────┼─────┼─────┼─────┼─────┤
-     TRNS, LCTL, LALT, LBRC, RBRC, TILD, TRNS,          TRNS, AMPR, 1,    2,    3,    RALT, _MUTE,
-  //└─────┴─────┴─────┴─┬───┴──┬──┴──┬──┴──┬──┘        └───┬─┴──┬──┴─┬───┴─┬───┴─────┴─────┴─────┘
-                         LCTL, LALT, TRNS,                  LEFT,RGHT,  0
-  //                    └──────┴─────┴─────┘               └────┴────┴─────┘
+  [_LOWER] = LAYOUT(
+  //┌──────┬──────┬──────┬──────┬──────┬──────┐                    ┌──────┬──────┬──────┬──────┬───────┬──────┐
+     KC_F12,KC_F1, KC_F2, KC_F3, KC_F4, KC_F5,                      KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, KC_F11,
+  //├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼───────┼──────┤
+     KC_NO,RGB_MOD,KC_PSCR,KC_LCBR,KC_RCBR,KC_PIPE,                 KC_UP, 7,     8,     9,     KC_HOME,KC_VOLU,
+  //├──────┼──────┼──────┼──────┼──────┼──────┤                    ├──────┼──────┼──────┼──────┼───────┼──────┤
+     KC_NO,KC_PGUP,KC_PGDN,KC_LPRN,KC_RPRN, KC_GRAVE,               KC_DOWN,4,    5,     6,     KC_END,  KC_VOLD,
+  //├──────┼──────┼──────┼──────┼──────┼──────┼───────┐    ┌───────┼──────┼──────┼──────┼──────┼───────┼──────┤
+     KC_NO,KC_LCTL,OALT ,KC_LBRC,KC_RBRC,  KC_TILD,KC_NO,      KC_NO, KC_AMPR, 1,    2,     3,    KC_RALT, KC__MUTE,
+  //└──────┴──────┴──────┴───┬──┴──┬──┴───┬───┴───┬──┘    └───┬───┴──┬───┴───┬──┴───┬──┴──────┴───────┴──────┘
+                              KC_LCTL,KC_LALT,KC_NO,            KC_LEFT,KC_RGHT,0
+  //                         └─────┴──────┴───────┘            └──────┴───────┴──────┘
   ),
 
   [_GAMING] = LAYOUT(

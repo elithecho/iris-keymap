@@ -12,7 +12,7 @@
 // #define EE_HANDS
 
 #undef RGBLED_NUM
-#define RGBLIGHT_ANIMATIONS
+#define RGBLIGHT_EFFECT_RAINBOW_SWIRL
 #define RGBLED_NUM 10
 #define RGBLIGHT_HUE_STEP 8
 #define RGBLIGHT_SAT_STEP 8
@@ -25,7 +25,11 @@
 // #define MOUSEKEY_MAX_SPEED 7
 // #define MOUSEKEY_WHEEL_DELAY 0
 
-#define AUTO_SHIFT_TIMEOUT 130
+#define AUTO_SHIFT_TIMEOUT 135
 // #define NO_AUTO_SHIFT_SPECIAL
 
 // #define COMBO_COUNT 1
+//
+// Optimizations
+#define NO_ACTION_MACRO
+#define NO_ACTION_FUNCTION
